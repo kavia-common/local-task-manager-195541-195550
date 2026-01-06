@@ -8,13 +8,16 @@ import React from "react";
 export function SearchBox({ value, onChange }) {
   /** Search box controlled input. */
   return (
-    <div style={{ flex: "1 1 260px" }}>
+    <div className="SearchWrap">
       <label className="visually-hidden" htmlFor="searchTodos">
         Search tasks
       </label>
+      <span className="SearchIcon" aria-hidden="true">
+        ⌕
+      </span>
       <input
         id="searchTodos"
-        className="Input"
+        className="Input SearchInput"
         placeholder="Search…"
         value={value}
         onChange={(e) => onChange(e.target.value)}

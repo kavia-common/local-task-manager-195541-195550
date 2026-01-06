@@ -37,7 +37,7 @@ export function TodoInput({ onAdd }) {
 
   return (
     <div className="Stack">
-      <div className="Row">
+      <div className="Row RowRow">
         <label className="visually-hidden" htmlFor="newTodo">
           New task
         </label>

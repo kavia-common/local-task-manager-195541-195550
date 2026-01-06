@@ -71,7 +71,7 @@ export function SettingsModal({
         <div className="ModalBody">
           <div className="Stack">
             <div>
-              <div style={{ fontWeight: 800, marginBottom: 8 }}>Storage engine</div>
+              <div className="SectionTitle">Storage engine</div>
               <div className="RadioRow" role="radiogroup" aria-label="Choose storage engine">
                 <div className="RadioCard">
                   <label>
@@ -86,9 +86,7 @@ export function SettingsModal({
                     IndexedDB (recommended)
                   </label>
                   <div className="InputHint">
-                    {indexedDbAvailable
-                      ? "Available"
-                      : "Not available in this browser/context. Use LocalStorage."}
+                    {indexedDbAvailable ? "Available" : "Not available in this browser/context. Use LocalStorage."}
                   </div>
                 </div>
 
@@ -111,16 +109,16 @@ export function SettingsModal({
             </div>
 
             <div>
-              <div style={{ fontWeight: 800, marginBottom: 8 }}>Export / Import (JSON)</div>
+              <div className="SectionTitle">Export / Import (JSON)</div>
               <div className="Row">
-                <button type="button" className="Button" onClick={doExport}>
+                <button type="button" className="Button ButtonOutline" onClick={doExport}>
                   Export to JSON
                 </button>
                 <button type="button" className="Button ButtonPrimary" onClick={doImport}>
                   Import JSON
                 </button>
               </div>
-              <div className="InputHint" style={{ marginTop: 8 }}>
+              <div className="InputHint SpacerTop2">
                 Paste JSON here to import. Import replaces all tasks in the selected storage engine.
               </div>
               <textarea
@@ -139,7 +137,7 @@ export function SettingsModal({
         </div>
 
         <div className="ModalFooter">
-          <button type="button" className="Button" onClick={onClose}>
+          <button type="button" className="Button ButtonPrimary" onClick={onClose}>
             Done
           </button>
         </div>
