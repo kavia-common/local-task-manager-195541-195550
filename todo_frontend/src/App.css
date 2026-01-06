@@ -1,8 +1,18 @@
 /* App theme + component styling (single styling approach: plain CSS) */
 :root {
-  /* Palette (provided) */
-  --primary: #3b82f6;
-  --success: #06b6d4;
+  /* Palette (updated to orange primary accent) */
+  --primary: #f97316; /* base orange */
+  --primary-hover: #fb923c;
+  --primary-dark: #ea580c;
+  --primary-contrast: #ffffff;
+  --primary-soft: #fff7ed;
+
+  /*
+    Note: the app previously had a separate "success" accent (#06b6d4) used for
+    completed/checked states. Per request, we now unify the accent palette to orange.
+  */
+  --success: var(--primary);
+
   --secondary: #64748b;
   --error: #ef4444;
 
@@ -13,7 +23,9 @@
   /* Derived tokens */
   --muted: var(--secondary);
   --border: #e5e7eb;
-  --ring: rgba(59, 130, 246, 0.35);
+
+  /* Focus ring */
+  --ring: rgba(249, 115, 22, 0.35); /* focus-ring: 0 0 0 3px rgba(249, 115, 22, 0.35) */
 
   /* Spacing (4/8px system) */
   --space-1: 4px;
@@ -71,7 +83,7 @@ a {
   width: 1px;
   height: 1px;
   padding: 0;
-  margin: -1px;
+  margin: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
@@ -141,7 +153,7 @@ a {
 .CardHeader {
   padding: var(--space-4);
   border-bottom: 1px solid var(--border);
-  background: linear-gradient(to bottom, rgba(59, 130, 246, 0.06), rgba(255, 255, 255, 0));
+  background: linear-gradient(to bottom, rgba(249, 115, 22, 0.08), rgba(255, 255, 255, 0));
 }
 
 .CardBody {
@@ -186,12 +198,12 @@ a {
 }
 
 .Input:focus {
-  border-color: rgba(59, 130, 246, 0.9);
+  border-color: rgba(249, 115, 22, 0.9);
   box-shadow: 0 0 0 4px var(--ring);
 }
 
 .Input:focus-visible {
-  border-color: rgba(59, 130, 246, 0.9);
+  border-color: rgba(249, 115, 22, 0.9);
   box-shadow: 0 0 0 4px var(--ring);
 }
 
@@ -258,17 +270,17 @@ a {
 .ButtonPrimary {
   background: var(--primary);
   border-color: var(--primary);
-  color: #ffffff;
+  color: var(--primary-contrast);
 }
 
 .ButtonPrimary:hover {
-  background: #2f6fde;
-  border-color: #2f6fde;
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
 }
 
 .ButtonPrimary:active {
-  background: #285fca;
-  border-color: #285fca;
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
 }
 
 .ButtonOutline {
@@ -309,8 +321,8 @@ a {
 }
 
 .ButtonText:hover {
-  background: rgba(59, 130, 246, 0.08);
-  border-color: rgba(59, 130, 246, 0.15);
+  background: rgba(249, 115, 22, 0.10);
+  border-color: rgba(249, 115, 22, 0.18);
   box-shadow: none;
 }
 
@@ -350,8 +362,8 @@ a {
 }
 
 .ChipActive {
-  border-color: rgba(59, 130, 246, 0.35);
-  background: rgba(59, 130, 246, 0.10);
+  border-color: rgba(249, 115, 22, 0.35);
+  background: rgba(249, 115, 22, 0.12);
   color: var(--text);
 }
 
@@ -401,14 +413,14 @@ a {
 
 .Item:hover {
   border-color: #d1d5db;
-  background: rgba(59, 130, 246, 0.04);
+  background: rgba(249, 115, 22, 0.06);
   box-shadow: var(--shadow-sm);
   transform: translateY(-1px);
 }
 
 .Item:focus-within {
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.14), var(--shadow-sm);
-  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.16), var(--shadow-sm);
+  border-color: rgba(249, 115, 22, 0.35);
 }
 
 .Check {
@@ -437,17 +449,17 @@ a {
 
 .Check:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.18);
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.18);
 }
 
 .CheckChecked {
-  border-color: var(--success);
-  background: rgba(6, 182, 212, 0.12);
+  border-color: var(--primary);
+  background: rgba(249, 115, 22, 0.14);
 }
 
 .CheckIcon {
   font-size: 12px;
-  color: var(--success);
+  color: var(--primary-dark);
   font-weight: 900;
   line-height: 1;
 }
@@ -534,7 +546,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-3);
-  background: linear-gradient(to bottom, rgba(59, 130, 246, 0.07), rgba(255, 255, 255, 0));
+  background: linear-gradient(to bottom, rgba(249, 115, 22, 0.09), rgba(255, 255, 255, 0));
 }
 
 .ModalTitle {
@@ -620,7 +632,7 @@ a {
 }
 
 .Textarea:focus {
-  border-color: rgba(59, 130, 246, 0.9);
+  border-color: rgba(249, 115, 22, 0.9);
   box-shadow: 0 0 0 4px var(--ring);
 }
 
