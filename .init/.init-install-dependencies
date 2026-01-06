@@ -1,0 +1,4 @@
+{
+    "command": "npm install",
+    "working_directory": "/home/kavia/workspace/code-generation/local-task-manager-195541-195550/todo_frontend"
+}
